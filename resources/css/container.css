@@ -1,0 +1,5 @@
+
+/* IMPORTANTE: Desabilita la case container de TAILWIND, en el archivo tailwindconfig.js*/
+.container{
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
