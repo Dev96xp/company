@@ -8,6 +8,7 @@ use Illuminate\Routing\Route as RoutingRoute;
 use Illuminate\Routing\Router;
 use Illuminate\Routing\RouteUri;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,10 +21,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('home');
-
+Route::get('/', HomeController::class)->name('home');
 
 Route::get('equipment', [EquipmentController::class, 'index'])->name('equipment');
 

@@ -252,8 +252,11 @@ return [
     |
     */
 
-    'use_route_url' => true,   // Lo cambie para apuntar a la ruta HOME OJO OJO OJO
-    'dashboard_url' => 'home',
+    //'use_route_url' => true,   // Lo cambie para apuntar a la ruta HOME OJO OJO OJO
+    //'dashboard_url' => 'home',
+
+    'use_route_url' => false,   // Lo cambie para apuntar a la ruta HOME, de otra manera
+    'dashboard_url' => '/',     // Lo cambie para apuntar a la ruta HOME, de otra manera
     'logout_url' => 'logout',
     'login_url' => 'login',
     'register_url' => 'register',
@@ -317,16 +320,28 @@ return [
             'text'        => 'Messages',
             'route'       => 'messages.index',
             'icon_color'  => 'red',
-        ], 
-
-        [
-            'text'        => 'pages',
-            'url'         => 'admin/pages',
-            'icon'        => 'far fa-fw fa-file',
-            'label'       => 4,
-            'label_color' => 'success',
         ],
 
+        [
+            'text'        => 'Dashborad',
+            'route'       => 'admin.home',
+            'icon'        => 'fas fa-fw fa-tachometer-alt',
+        ],
+
+        [
+            'text'        => 'Lista de Roles',
+            //'url'         => 'admin/pages',
+            'route'       => 'admin.roles.index',
+            'icon'        => 'fas fa-fw fa-user-cog',
+            'active'      => ['admin/roles*']
+        ],
+        [
+            'text'        => 'Usuarios',
+            //'url'         => 'admin/pages',
+            'route'       => 'admin.users.index',
+            'icon'        => 'fas fa-fw fa-users',
+            'active'      => ['admin/users*']
+        ],
         ['header' => 'labels'],
         [
             'text'       => 'important',
@@ -497,5 +512,5 @@ return [
     |
     */
 
-    'livewire' => false,
+    'livewire' => true,  // OJO Esto habilita que Livewire trabaje
 ];

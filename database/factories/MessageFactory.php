@@ -2,6 +2,8 @@
 
 namespace Database\Factories;
 
+use Faker\Provider\Lorem;
+use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -17,7 +19,15 @@ class MessageFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'company' => $this->faker->company(),
+            'address' => $this->faker->address(),
+            'city' => $this->faker->city(),
+            'state' => $this->faker->state(),
+            'zip' => '12345',
+            'phone' => $this->faker->phoneNumber(),
+            'status' => 'A',
+            'message' => 'wherever',
+            'user_id' => 1,
         ];
     }
 }
